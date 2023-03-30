@@ -28,6 +28,12 @@ public class GameBoard {
             // Initialize 'rows' and 'cols'
             // Initialize 'board' to a new 2D Cell array with 'rows' rows and 'cols' columns
             // Run initBoard(), initCell0(), and initGemCell()
+            this.rows = rows;
+            this.cols = cols;
+            this.board = new Cell[rows][cols];
+            initBoard();
+            initCell0();
+            initGemCell();
 
     }
 
@@ -40,7 +46,12 @@ public class GameBoard {
         /* TODO: Initialize the board */
             // Initialize every element to a new Cell object with the no-argument constructor
             // For every new element, increment exitCell
-
+            for(int i = 0; i < this.board.length; i++) {
+                for(int j = 0; j < this.board[i].length; j++) {
+                    board[i][j] = new Cell();
+                    exitCell++;
+                }
+            }
     }
 
     /**

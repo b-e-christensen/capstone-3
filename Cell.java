@@ -43,27 +43,62 @@ public class Cell {
             // If randNum is 1, String is "Boar" and int1 is -1
             // If randNum is 2, String is "Elk" and int1 is 0
             // If randNum is 3 or 4, String is "Hare" and int1 is 1
+            String[] animals = { "Wolf", "Boar", "Elk", "Hare", "Hare" };
+            int num;
+            if(randNum == 4) {
+                num = randNum - 3;
+            } else {
+                num = randNum - 2;
+            }
+            
+            Animal animal = new Animal(animals[randNum], num, this.id);
+            return animal;
 
     }
 
 
 
-
     /* TODO: Add getter methods: */
         // cellItem getter
+        public CellItem getCellItem() {
+            return this.cellItem;
+        }
         // id getter
+        public int getID() {
+            return this.id;
+        }
         // cleared getter
+        public boolean getCleared() {
+            return this.cleared;
+        }
         // visited getter
+        public boolean getVisited() {
+            return this.visited;
+        }
         // cellCost getter
             // If a cell has been visited, the cellCost getter returns 0
-    
-
-
+        public int getCellCost() {
+            CellItem item = getCellItem();
+            int cellCost = item.cost;
+            if(getVisited()) {
+                cellCost = 0;
+            }
+            return cellCost;
+        }
             
     /* TODO: Add getter methods: */
         // cellItem setter
+        public void setCellItem(CellItem cell) {
+            this.cellItem = cell;
+        }
         // cleared setter
+        public void setCleared(boolean cleared) {
+            this.cleared = cleared;
+        }
         // visited setter
+        public void setVisited(boolean visited) {
+            this.visited = visited;
+        }
 
 
 
@@ -97,10 +132,14 @@ public class Cell {
      * @return true if same, false otherwise.
      */
     @Override
-    /* TODO: declare equals() method */ {
+    /* TODO: declare equals() method */ 
+    public boolean equals(Object other) {
 
         // TODO: return true if cells have the same id
         // Otherwise, return false
+        Cell otherCell = (Cell) other;
+
+        return(this.id == otherCell.id);
 
     }
 
