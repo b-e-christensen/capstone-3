@@ -24,7 +24,6 @@ public class CellItem {
      * @param cost int for attribute 'cost'
      */
     public CellItem(String name, int cost) {
-        // TODO: complete constructor
             // Set attribute 'name' to String argument
             // Set attribute 'cost' to int argument'
         this.name = name;
@@ -37,10 +36,7 @@ public class CellItem {
      * @return int representing the CellItem cost
      */
     public int getCost() {
-        
-        // TODO: return 'cost'
         return this.cost;
-
     }
 
     /**
@@ -49,10 +45,7 @@ public class CellItem {
      * @return String representing the CellItem name
      */
     public String getName() {
-
-        // TODO: return 'name'
         return this.name;
-
     }
 
     /**
@@ -61,10 +54,8 @@ public class CellItem {
      * @return String with the CellItem name
      */
     // @Override
-    /* TODO: Declare method toString() */ {
-
-        // TODO: return String 'name'
-
+    public String toString(){
+        return getName();
     }
 
 }

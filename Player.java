@@ -8,7 +8,6 @@ public class Player {
      * sets player health to 1000 and position 0
      */
     public Player() {
-
         health = 500;
         position = 0;
     }
@@ -30,7 +29,6 @@ public class Player {
      * @return the health for the player object
      */
     public int getHealth() {
-
         return this.health;
     }
 

@@ -37,12 +37,6 @@ public class Cell {
      * @return an Animal object
      */
     private Animal initAnimal(int randNum) {
-        /* TODO: return a new Animal instance using Animal(String, int1, int2) */
-            // int2 is the id of the Cell
-            // If randNum is 0, String is "Wolf" and int1 is -2
-            // If randNum is 1, String is "Boar" and int1 is -1
-            // If randNum is 2, String is "Elk" and int1 is 0
-            // If randNum is 3 or 4, String is "Hare" and int1 is 1
             String[] animals = { "Wolf", "Boar", "Elk", "Hare", "Hare" };
             int num;
             if(randNum == 4) {
@@ -56,9 +50,6 @@ public class Cell {
 
     }
 
-
-
-    /* TODO: Add getter methods: */
         // cellItem getter
         public CellItem getCellItem() {
             return this.cellItem;
@@ -85,8 +76,7 @@ public class Cell {
             }
             return cellCost;
         }
-            
-    /* TODO: Add getter methods: */
+
         // cellItem setter
         public void setCellItem(CellItem cell) {
             this.cellItem = cell;
@@ -132,10 +122,9 @@ public class Cell {
      * @return true if same, false otherwise.
      */
     @Override
-    /* TODO: declare equals() method */ 
     public boolean equals(Object other) {
 
-        // TODO: return true if cells have the same id
+        // Return true if cells have the same id
         // Otherwise, return false
         Cell otherCell = (Cell) other;
 

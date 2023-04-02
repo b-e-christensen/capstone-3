@@ -18,23 +18,17 @@ public class GameBoard {
      * Parameterized constructor
      * Creates a board of specified size and initializes cells
      * 
-     * @param rows  number of rows in board
-     * @param cols  number of columns in board
+     * @param rows number of rows in board
+     * @param cols number of columns in board
      */
 
     public GameBoard(int rows, int cols) {
-
-        /* TODO: complete constructor */
-            // Initialize 'rows' and 'cols'
-            // Initialize 'board' to a new 2D Cell array with 'rows' rows and 'cols' columns
-            // Run initBoard(), initCell0(), and initGemCell()
-            this.rows = rows;
-            this.cols = cols;
-            this.board = new Cell[rows][cols];
-            initBoard();
-            initCell0();
-            initGemCell();
-
+        this.rows = rows;
+        this.cols = cols;
+        this.board = new Cell[rows][cols];
+        initBoard();
+        initCell0();
+        initGemCell();
     }
 
     /**
@@ -42,16 +36,15 @@ public class GameBoard {
      * and increments the exitCell attribute
      */
     private void initBoard() {
-
-        /* TODO: Initialize the board */
-            // Initialize every element to a new Cell object with the no-argument constructor
-            // For every new element, increment exitCell
-            for(int i = 0; i < this.board.length; i++) {
-                for(int j = 0; j < this.board[i].length; j++) {
-                    board[i][j] = new Cell();
-                    exitCell++;
-                }
+        // Initialize every element to a new Cell object with the no-argument
+        // constructor
+        // For every new element, increment exitCell
+        for (int i = 0; i < this.board.length; i++) {
+            for (int j = 0; j < this.board[i].length; j++) {
+                board[i][j] = new Cell();
+                exitCell++;
             }
+        }
     }
 
     /**
@@ -60,9 +53,7 @@ public class GameBoard {
     private void initCell0() {
         board[0][0].setCleared(true);
         board[0][0].setVisited(true);
-
     }
-
     /**
      * Places the gem in a random spot on the board
      * that is not the first or last cells
@@ -70,9 +61,7 @@ public class GameBoard {
     private void initGemCell() {
         int randI;
         int randJ;
-
         do {
-
             randI = (int) ((board.length) * Math.random());
             randJ = (int) ((board[0].length) * Math.random());
 
@@ -80,7 +69,6 @@ public class GameBoard {
             board[randI][randJ].setCellItem(c);
 
         } while ((randI == 0 && randJ == 0) || ((randI == (board.length - 1) && randJ == (board[0].length - 1))));
-
     }
 
     /**
@@ -118,9 +106,7 @@ public class GameBoard {
                 }
             }
         }
-
         return coord;
-
     }
 
     /**
